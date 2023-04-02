@@ -38,15 +38,16 @@ export class TopHeadlinesComponent implements OnInit {
 
   getTopHeadlinesData() {
     this.loading = true;
-    this.usersService
-      .getTopHeadlines(this.apiReqDtls)
-      .subscribe((headlinesResp: any) => {
+    this.usersService.getTopHeadlines(this.apiReqDtls).subscribe(
+      (headlinesResp: any) => {
         this.loading = false;
         this.totalHeadlinesCnt = headlinesResp?.totalResults || 0;
         this.headlinesListData = [
           ...this.headlinesListData,
           ...(headlinesResp?.articles || []),
         ];
-      });
+      },
+      (err: any) => console.log('API Error', err?.message)
+    );
   }
 }

@@ -1,7 +1,10 @@
 <div class="headlines--container">
-    <ng-container *ngIf="headlinesListData.length">
+    <ng-container *ngIf="headlinesListData.length else emptyData">
         <app-feeds *ngFor="let eachHeadline of headlinesListData" [feedDetails]="eachHeadline"></app-feeds>
     </ng-container>
+    <ng-template #emptyData>
+        <div class="headlines--empty" *ngIf="!loading">No feed found</div>
+    </ng-template>
 </div>
 
 <app-loader [loading]="loading" [isLazy]="apiReqDtls.page > 1"></app-loader>
