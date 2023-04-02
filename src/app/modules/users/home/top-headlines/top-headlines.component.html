@@ -1,0 +1,7 @@
+<div class="headlines--container">
+    <ng-container *ngIf="headlinesListData.length">
+        <app-feeds *ngFor="let eachHeadline of headlinesListData" [feedDetails]="eachHeadline"></app-feeds>
+    </ng-container>
+</div>
+
+<app-loader [loading]="loading" [isLazy]="apiReqDtls.page > 1"></app-loader>

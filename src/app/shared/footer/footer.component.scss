@@ -1,0 +1,27 @@
+.footer {
+    &--container {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        z-index: 9999;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #ffffff;
+        border-top: 1px solid #dbdbdb;
+        @media only screen and (max-width: 576px) {
+            left: 0;
+        }
+    }
+    &--icon {
+        padding: 8px;
+        & i {
+            cursor: pointer;
+            font-size: 2.4rem;
+        }
+        & img {
+            cursor: pointer;
+        }
+    }
+}

@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+@import "styles/main.scss";
+// Variables
+// for colors
+// #ffffff: #ffffff;
+// #262626: #262626;
+// #8e8e8e: #8e8e8e;
+// #dbdbdb: #dbdbdb;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; // =10px
+}
+
+body {
+    font-size: 1.4rem;
+    line-height: 1rem;
+    color: #262626;
+    background-color: #ffffff;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+img {
+    max-width: 100%;
+}

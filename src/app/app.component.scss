@@ -1,0 +1,9 @@
+.layout {
+    &--content {
+        padding: 5rem;
+        background-color: #ffffff;
+        @media only screen and (max-width: 768px) {
+            padding: 5rem 1rem;
+        }
+    }
+}

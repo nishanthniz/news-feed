@@ -1,0 +1,39 @@
+<div class="feed--container">
+    <div class="feed--header">
+        <div class="feed--title">{{feedDetails.title}}</div>
+        <div><img src="../../../../../../assets/images/icons/feed_menu.svg" alt="Feed Menu"></div>
+    </div>
+    <div class="feed--image">
+        <img [src]="feedDetails.urlToImage" [alt]="feedDetails.title"
+            (error)="feedDetails.urlToImage = placeholderImg;">
+    </div>
+    <div class="feed--interaction--container">
+        <div class="feed--interaction--left">
+            <div class="feed--interaction--icon">
+                <img src="../../../../../../assets/images/icons/like.svg" alt="Like">
+            </div>
+            <div class="feed--interaction--icon">
+                <img src="../../../../../../assets/images/icons/comment.svg" alt="Comment">
+            </div>
+            <div class="feed--interaction--icon">
+                <img src="../../../../../../assets/images/icons/share.svg" alt="Share">
+            </div>
+        </div>
+        <div class="feed--interaction--right">
+            <div class="feed--interaction--icon">
+                <img src="../../../../../../assets/images/icons/save.svg" alt="Save">
+            </div>
+        </div>
+    </div>
+    <div class="feed--content">
+        <span class="feed--author">{{feedDetails.author || 'Unknown'}}</span>
+        <ng-container *ngIf="feedDetails.description">
+            <span class="feed--description">{{isShowMoreDesc ? feedDetails.description : getDescValue()}}</span>
+            <ng-container *ngIf="shortDesc && !isShowMoreDesc">
+                <span>... </span>
+                <span class="feed--description--more" (click)="isShowMoreDesc = true;">more</span>
+            </ng-container>
+        </ng-container>
+    </div>
+    <div class="feed-date" *ngIf="feedDetails.publishedAt">{{getNewsAge(feedDetails.publishedAt)}}</div>
+</div>
