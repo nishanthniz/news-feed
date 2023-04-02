@@ -1,6 +1,6 @@
 ## News Feed Application
 
-This is a news feed application developed using Angular version 15. The app allows users to view the latest news articles from various sources around the world.
+This is a news feed application developed using Angular version 15. The app allows users to view the latest news articles.
 
 ## Installation
 
